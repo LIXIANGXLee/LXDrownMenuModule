@@ -1,0 +1,6 @@
+framework module LXDrownMenuManager {
+  umbrella header "LXDrownMenuManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

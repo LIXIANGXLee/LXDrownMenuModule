@@ -1,0 +1,23 @@
+PODS:
+  - LXDrownMenuManager (1.0.0):
+    - LXFitManager
+  - LXFitManager (1.0.0)
+
+DEPENDENCIES:
+  - LXDrownMenuManager (from `./`)
+
+SPEC REPOS:
+  trunk:
+    - LXFitManager
+
+EXTERNAL SOURCES:
+  LXDrownMenuManager:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  LXDrownMenuManager: 0a2d202ffc6b74802c1fae605d04d7e285f1d8af
+  LXFitManager: e8f88896ba1c848c263c49250b590802a987ab3e
+
+PODFILE CHECKSUM: b59b2abd7527f626fd5e51107aab6dfca90bf187
+
+COCOAPODS: 1.9.1
