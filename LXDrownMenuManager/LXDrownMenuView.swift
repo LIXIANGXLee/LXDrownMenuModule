@@ -8,8 +8,8 @@
 import UIKit
 
 
-public protocol LXDrownMenuViewDelegate {}
-open class LXDrownMenuView: UIView {
+private protocol LXDrownMenuViewDelegate {}
+open class LXDrownMenuView: UIView, LXDrownMenuViewDelegate {
      
     ///动画时常
     open var animateDuration: TimeInterval = 0.25
@@ -50,7 +50,7 @@ open class LXDrownMenuView: UIView {
     public override init(frame: CGRect) {
          super.init(frame: frame)
          addSubview(containerView)
-         backgroundColor = UIColor.black.withAlphaComponent(0.1)
+         backgroundColor = UIColor.black.withAlphaComponent(0.7)
      }
      
     required public init?(coder: NSCoder) {

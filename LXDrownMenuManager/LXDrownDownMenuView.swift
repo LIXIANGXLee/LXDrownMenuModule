@@ -9,7 +9,7 @@
 import UIKit
 import LXFitManager
 
-public class LXDrownDownMenuView: LXDrownMenuView,LXDrownMenuViewDelegate {
+public class LXDrownDownMenuView: LXDrownMenuView {
     
    ///比屏幕尺寸小多少
    public var letMargin: CGFloat = 10

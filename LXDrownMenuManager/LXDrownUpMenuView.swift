@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class LXDrownUpMenuView: LXDrownMenuView,LXDrownMenuViewDelegate {
+public class LXDrownUpMenuView: LXDrownMenuView {
       
     private var maxH: CGFloat = 0.0
 
