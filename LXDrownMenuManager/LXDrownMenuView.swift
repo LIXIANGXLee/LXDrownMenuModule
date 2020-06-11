@@ -7,13 +7,15 @@
 
 import UIKit
 
-
 private protocol LXDrownMenuViewDelegate {}
 open class LXDrownMenuView: UIView, LXDrownMenuViewDelegate {
      
     ///动画时常
     open var animateDuration: TimeInterval = 0.25
     
+    /// view的透明度
+    open var viewAlpha: CGFloat = 0.7
+
     /// presented跟控制器
     open var aboveViewController: UIViewController? {
         var aboveController = UIApplication.shared.delegate?.window??.rootViewController
@@ -50,7 +52,7 @@ open class LXDrownMenuView: UIView, LXDrownMenuViewDelegate {
     public override init(frame: CGRect) {
          super.init(frame: frame)
          addSubview(containerView)
-         backgroundColor = UIColor.black.withAlphaComponent(0.7)
+         backgroundColor = UIColor.black.withAlphaComponent(viewAlpha)
      }
      
     required public init?(coder: NSCoder) {

@@ -27,14 +27,14 @@ class ViewController: UIViewController {
     
     @objc func btnClick(_ btn: UIButton) {
         
-       let menu = LXDrownDownMenuView()
-        menu.bgImage = UIImage(named: "timg")
-        menu.letMargin = (UIScreen.main.bounds.width - LXFit.fitFloat(325)) * 0.5
-        menu.animateDuration = 0.25
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: LXFit.fitFloat(325), height: LXFit.fitFloat(300)))
-        view.backgroundColor = UIColor.green
-        menu.content = view
-        menu.showFrom(from: btn)
+//       let menu = LXDrownDownMenuView()
+//        menu.bgImage = UIImage(named: "timg")
+//        menu.letMargin = (UIScreen.main.bounds.width - LXFit.fitFloat(325)) * 0.5
+//        menu.animateDuration = 0.25
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: LXFit.fitFloat(325), height: LXFit.fitFloat(300)))
+//        view.backgroundColor = UIColor.green
+//        menu.content = view
+//        menu.showFrom(from: btn)
         
         
         let menu1 = LXDrownUpMenuView()
