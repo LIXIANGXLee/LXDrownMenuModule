@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.green
+        self.view.backgroundColor = UIColor.blue
         
         let btn = UIButton(type: .custom)
         btn.backgroundColor = UIColor.red
@@ -28,18 +28,20 @@ class ViewController: UIViewController {
     @objc func btnClick(_ btn: UIButton) {
         
 //       let menu = LXDrownDownMenuView()
-//        menu.bgImage = UIImage(named: "timg")
+////        menu.bgImage = UIImage(named: "timg")
 //        menu.letMargin = (UIScreen.main.bounds.width - LXFit.fitFloat(325)) * 0.5
 //        menu.animateDuration = 0.25
 //        let view = UIView(frame: CGRect(x: 0, y: 0, width: LXFit.fitFloat(325), height: LXFit.fitFloat(300)))
 //        view.backgroundColor = UIColor.green
 //        menu.content = view
 //        menu.showFrom(from: btn)
-        
+//
         
         let menu1 = LXDrownUpMenuView()
         let view1 = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: LXFit.fitFloat(300)))
-        view1.backgroundColor = UIColor.purple
+//        view1.backgroundColor = UIColor.white
+
+//        menu1.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         menu1.content = view1
         menu1.animateDuration = 0.25
 

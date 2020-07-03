@@ -52,7 +52,8 @@ open class LXDrownMenuView: UIView, LXDrownMenuViewDelegate {
     public override init(frame: CGRect) {
          super.init(frame: frame)
          addSubview(containerView)
-         backgroundColor = UIColor.black.withAlphaComponent(viewAlpha)
+         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        backgroundColor = UIColor.black.withAlphaComponent(viewAlpha)
      }
      
     required public init?(coder: NSCoder) {
