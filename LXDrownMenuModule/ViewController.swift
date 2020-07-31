@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
+        self.view.backgroundColor = UIColor.white
         
         let btn = UIButton(type: .custom)
         btn.backgroundColor = UIColor.red
@@ -37,17 +37,53 @@ class ViewController: UIViewController {
 //        menu.showFrom(from: btn)
 //
         
-        let menu1 = LXDrownUpMenuView()
-        let view1 = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: LXFit.fitFloat(300)))
-//        view1.backgroundColor = UIColor.white
+//        let menu1 = LXDrownUpMenuView()
+//        let view1 = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: LXFit.fitFloat(300)))
+////        view1.backgroundColor = UIColor.white
+//
+////        menu1.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+//        menu1.content = view1
+//        menu1.animateDuration = 0.25
+//
+//        menu1.show()
+//
+        let ii = ["fgfhkvjkgsdgjjhjkg","jkgjkdg sjgrere","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg"]
+        var itemModels = [ItemModel]()
+        for i in 0..<ii.count {
+            let itemModel = ItemModel()
+            itemModel.title = ii[i]
+            itemModels.append(itemModel)
+        }
+        
+        let menu1 = LXDrownDownItemView.shared
+        
+        menu1.itemModels = itemModels
 
-//        menu1.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        menu1.content = view1
-        menu1.animateDuration = 0.25
-
-        menu1.show()
+        menu1.backgroundColorNormal = UIColor.red
+        menu1.backgroundColorSelect = UIColor.black
+        
+        menu1.textColorSelect = UIColor.green
+        menu1.textColorNormal = UIColor.white
+        
+        menu1.contentH = LXFit.fitFloat(30)
+        menu1.textFont = UIFont.systemFont(ofSize: 30).fitFont
+                
+        
+        menu1.setHandle { (index, model) in
+            print("=====\(index)==\(model?.title)")
+        }
+                menu1.showFrom(from: btn)
+            
+        
         
     }
 
 }
 
+class ItemModel: LXDrownDownItemProtocol {
+    var title: String = "hahfdsfdscah"
+    
+    var id: Int = 0
+    
+    
+}

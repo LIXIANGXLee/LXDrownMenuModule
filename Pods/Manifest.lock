@@ -1,5 +1,5 @@
 PODS:
-  - LXDrownMenuManager (1.1.0):
+  - LXDrownMenuManager (1.2.0):
     - LXFitManager
   - LXFitManager (1.0.0)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LXDrownMenuManager: 0e74e5d3f803f96188e9198c3e0f901959cd2ac1
+  LXDrownMenuManager: 483978f0ad12a813ff967b11c06cac8ecfa24e83
   LXFitManager: e8f88896ba1c848c263c49250b590802a987ab3e
 
 PODFILE CHECKSUM: b59b2abd7527f626fd5e51107aab6dfca90bf187
