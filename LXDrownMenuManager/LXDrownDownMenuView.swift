@@ -50,7 +50,7 @@ public class LXDrownDownMenuView: LXDrownMenuView {
     public override func dismiss() {
          UIView.animate(withDuration: animateDuration, animations: {
              self.containerView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-             self.backgroundColor?.withAlphaComponent(0.0)
+             self.backgroundColor = UIColor.black.withAlphaComponent(0.01)
          }) {(finished) -> () in
              self.removeFromSuperview()
          }
@@ -74,10 +74,11 @@ extension LXDrownDownMenuView {
         let containerPoint = CGPoint(x: LXFit.fitFloat(letMargin), y: rect.maxY + LXFit.fitFloat(topMargin))
         self.containerView.frame.origin = containerPoint
         self.containerView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
-        self.backgroundColor?.withAlphaComponent(0.0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.01)
         UIView.animate(withDuration: animateDuration) {
             self.containerView.transform = CGAffineTransform.identity
-            self.backgroundColor?.withAlphaComponent(self.viewAlpha)
+            self.backgroundColor = UIColor.black.withAlphaComponent(self.viewAlpha)
+
         }
     }
 }

@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "LXDrownMenuManager"
-  spec.version      = "1.3.0"
+  spec.version      = "1.4.0"
   spec.summary      = "LXDrownMenuManager."
 
   # This description is used to generate tags and improve search results.

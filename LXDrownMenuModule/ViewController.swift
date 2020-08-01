@@ -22,6 +22,14 @@ class ViewController: UIViewController {
         view.addSubview(btn)
         btn.addTarget(self, action: #selector(btnClick(_:)), for: UIControl.Event.touchUpInside)
         
+        
+        let btn1 = UIButton(type: .custom)
+               btn1.backgroundColor = UIColor.red
+               btn1.frame = CGRect(x: LXFit.fitFloat(100), y: 100, width: LXFit.fitFloat(100), height: 100)
+               view.addSubview(btn1)
+               btn1.addTarget(self, action: #selector(btnClick1(_:)), for: UIControl.Event.touchUpInside)
+               
+        
     }
 
     
@@ -47,7 +55,7 @@ class ViewController: UIViewController {
 //
 //        menu1.show()
 //
-        let ii = ["fgfhkvjkgsdgjjhjkg","jkgjkdg sjgrere","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg"]
+        let ii = ["fgfhkvjkgsdgjjhjkg","jkgjkdg sjgrere","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg","fgffdsfdsfdsfdhkvjkgsdg sjg","fgfhkvj","fgfhkv","fgfhkvjdsdskgsdgsjg","fgfhkvjkgsdgdgfdgfdgfdgsjg","fgfhkvjkgsdg sjg","fgfhkvjkgsdg sjg","fgfhkv433545453jkgsdg sjg","fgfhkvjkgsdg4343sjg"]
         var itemModels = [ItemModel]()
         for i in 0..<ii.count {
             let itemModel = ItemModel()
@@ -65,18 +73,55 @@ class ViewController: UIViewController {
         menu1.textColorSelect = UIColor.green
         menu1.textColorNormal = UIColor.white
         
-        menu1.contentH = LXFit.fitFloat(30)
-        menu1.textFont = UIFont.systemFont(ofSize: 30).fitFont
-                
-        
+        menu1.viewAlpha = 0.2
+
         menu1.setHandle { (index, model) in
             print("=====\(index)==\(model?.title)")
         }
-                menu1.showFrom(from: btn)
+        menu1.showFrom(from: btn,on:self.view,isAutoStretch: true)
             
         
-        
+        menu1.itemH = LXFit.fitFloat(30)
+               menu1.textFont = UIFont.systemFont(ofSize: 12).fitFont
+               menu1.contentViewMaxH = 400
     }
+    @objc func btnClick1(_ btn: UIButton) {
+           
+         let ii = ["fgfhkvjkgsdgjjhjkg","jkgjkdg sjgrere","fgfhkvj",]
+           var itemModels = [ItemModel]()
+           for i in 0..<ii.count {
+               let itemModel = ItemModel()
+               itemModel.title = ii[i]
+               itemModels.append(itemModel)
+           }
+           
+        let menu1 = LXDrownDownItemView.shared
+           
+           menu1.itemModels = itemModels
+
+           menu1.backgroundColorNormal = UIColor.red
+           menu1.backgroundColorSelect = UIColor.black
+           
+           menu1.textColorSelect = UIColor.green
+           menu1.textColorNormal = UIColor.white
+           
+        
+           menu1.itemH = LXFit.fitFloat(30)
+           menu1.textFont = UIFont.systemFont(ofSize: 12).fitFont
+           menu1.contentViewMaxH = 400
+           menu1.setHandle { (index, model) in
+//               print("=====\(index)==\(model?.title)")
+           }
+        
+        menu1.viewAlpha = 0.2
+
+                   menu1.showFrom(from: btn,on:self.view,isAutoStretch: true)
+               
+           
+           menu1.itemH = LXFit.fitFloat(30)
+           menu1.textFont = UIFont.systemFont(ofSize: 12).fitFont
+           menu1.contentViewMaxH = 400
+       }
 
 }
 

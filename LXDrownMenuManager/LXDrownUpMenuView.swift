@@ -35,7 +35,7 @@ public class LXDrownUpMenuView: LXDrownMenuView {
    public override func dismiss() {
        UIView.animate(withDuration: animateDuration, animations: {
            self.containerView.frame.origin.y = UIScreen.main.bounds.height
-           self.backgroundColor?.withAlphaComponent(0.0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.01)
        }) {(finished) -> () in
            self.removeFromSuperview()
        }
@@ -52,9 +52,9 @@ extension LXDrownUpMenuView {
         rootView.addSubview(self)
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + self.maxH)
         self.containerView.frame.origin.y = UIScreen.main.bounds.height
-        self.backgroundColor?.withAlphaComponent(0.0)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.01)
         UIView.animate(withDuration:animateDuration) {
-            self.backgroundColor?.withAlphaComponent(self.viewAlpha)
+            self.backgroundColor = UIColor.black.withAlphaComponent(self.viewAlpha)
             self.containerView.frame.origin.y = UIScreen.main.bounds.height - self.maxH
         }
     }   
