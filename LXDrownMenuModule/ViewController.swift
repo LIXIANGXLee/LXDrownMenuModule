@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         menu1.textColorNormal = UIColor.white
         
         menu1.viewAlpha = 0.2
-
+        menu1.selectIndex = 1
         menu1.setHandle { (index, model) in
             print("=====\(index)==\(model?.title)")
         }
@@ -112,7 +112,8 @@ class ViewController: UIViewController {
            menu1.setHandle { (index, model) in
 //               print("=====\(index)==\(model?.title)")
            }
-        
+        menu1.selectIndex = 2
+
         menu1.viewAlpha = 0.2
 
                    menu1.showFrom(from: btn,on:self.view,isAutoStretch: true)

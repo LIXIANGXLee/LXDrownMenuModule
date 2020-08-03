@@ -42,7 +42,10 @@ public class LXDrownDownItemView: LXDrownMenuView {
       public var itemViews = [LXItemView]()
       private var lastSelectItemView: LXItemView?
       public var itemViewCallBack: LXDrownDownItemViewCallBack?
-      
+    
+    ///默认选中的索引
+      public var selectIndex: Int = 0
+
       /// 数据源
       public var itemModels: [LXDrownDownItemProtocol]? {
         didSet {
@@ -180,7 +183,7 @@ public class LXDrownDownItemView: LXDrownMenuView {
             }
             items.append(itemView)
             ///默认选中
-            if index == 0 { itemViewClick(itemView) }
+            if index == selectIndex { itemViewClick(itemView) }
             
         }
         
